@@ -36,8 +36,6 @@ public:
   gam::Env<3> mAmpEnv;
   // envelope follower to connect audio output to graphics
   gam::EnvFollow<> mEnvFollow;
-  // Reverb effect
-  Reverb<float> reverb;
   // LFO (Low Frequency Oscillator)
   gam::LFO<> lfo;
   // All Pass Filter
@@ -76,9 +74,6 @@ public:
     createInternalTriggerParameter("lfoFreq", 1, 0.0, 20);
     createInternalTriggerParameter("lfoDepth", 1, 0.01, 1);
     createInternalTriggerParameter("filterFreq", 22000.0, 0.0, 22000.0);
-    // createInternalTriggerParameter("filterBandwith", 0.0, 0.0, 8000);
-    // initalize the reverb diffusion
-    reverb.diffusion(0.76, 0.666, 0.707, 0.571);
   }
 
   // The audio processing function
